@@ -35,7 +35,7 @@ cd istio-project
 See the [**official documentation of installation**](https://kind.sigs.k8s.io/docs/user/quick-start/#installation) for **Linux** and **MacOS** computers. 
 
 ```
-curl.exe -Lo kind-windows-amd64.exe https://kind.sigs.k8s.io/dl/v0.17.0/kind-windows-amd64
+curl -Lo kind-windows-amd64.exe https://kind.sigs.k8s.io/dl/v0.17.0/kind-windows-amd64
 Move-Item .\kind-windows-amd64.exe .\kind.exe
 ```
 
@@ -44,12 +44,10 @@ Move-Item .\kind-windows-amd64.exe .\kind.exe
 To manage the Cluster it's be necessary that you have [**kubectl installed**](https://kubernetes.io/docs/tasks/tools/#kubectl) in your computer.
 
 ```
-kind.exe create cluster --config=cluster.yaml
+kind create cluster --config=cluster.yaml
 
-# Verify the kubeconfig file in Windows
 type ~/.kube/config
 
-# Verify the kubeconfig file in Linux or MacOS
 cat ~/.kube/config
 ```
 
@@ -60,9 +58,6 @@ To install Istio Service Mesh in your computer, you need to get the latest versi
 In your compressed file of the Istio, you have a "bin" folder that contain you **istioctl** binary file. This is the principal tool to execute the installation of the Istio in your K8S Cluster based in the cluster configured in your **kubeconfig** file (if you have more than one cluster, you need to specify them in the Command Line).
 
 ```
-# Install Istio in the K8S Cluster
 istioctl install --set profile=demo -y
-
-# Check Status
-istioctl.exe proxy-status
+istioctl proxy-status
 ```
