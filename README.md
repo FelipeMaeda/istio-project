@@ -6,8 +6,8 @@ Service Mesh study. Tutorial of the Course Uncomplicating Istio of the LinuxTIPS
 
 **[What is Service Mesh?](#what-is-service-mesh)**<br>
 **[Creating a K8S Cluster with Kind](#creating-a-k8s-cluster-with-kind)**<br>
-    - [Install Kind (Windows)](#install-kind-windows)<br>
-    - [Creating a Cluster](#creating-a-cluster)<br>
+    [Install Kind (Windows)](#install-kind-windows)<br>
+    [Creating a Cluster](#creating-a-cluster)<br>
 **[Installing-Istio](#installing-istio)**<br>
 
 ## What is Service Mesh?
@@ -20,19 +20,28 @@ The Istio Service Mesh is the more famous in K8S Cluster and this tool have too 
 
 This is a test K8S Cluster created with Docker "Nodes". Used to test applications and features locally. It's a simple tool to study and make tutorials.
 
+### Clone this repo
+
+Before you start with the creation of the Cluster, clone this repository.
+
+```
+git clone https://github.com/FelipeMaeda/istio-project.git
+cd istio-project
+```
+
 ### Install Kind (Windows)
 
-See the official documentation of [installation](https://kind.sigs.k8s.io/docs/user/quick-start/#installation). 
+See the official documentation of [installation](https://kind.sigs.k8s.io/docs/user/quick-start/#installation) for Linux and MacOS computers. 
 
 ```
 curl.exe -Lo kind-windows-amd64.exe https://kind.sigs.k8s.io/dl/v0.17.0/kind-windows-amd64
-Move-Item .\kind-windows-amd64.exe c:\some-dir-in-your-PATH\kind.exe
+Move-Item .\kind-windows-amd64.exe .\kind.exe
 ```
 
 ### Creating a Cluster
 
 ```
-kind create cluster --config=cluster.yaml
+kind.exe create cluster --config=cluster.yaml
 ```
 
 ## Installing Istio
