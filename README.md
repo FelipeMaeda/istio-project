@@ -3,9 +3,12 @@
 Service Mesh study. Tutorial of the Course Uncomplicating Istio of the LinuxTIPS.
 
 # Summary
-<!--ts-->
-    * [What is Service Mesh?](##-What-is-Service-Mesh?)
-<!--te-->
+
+**[What is Service Mesh?](##What-is-Service-Mesh?)**<br>
+**[Creating a K8S Cluster with Kind](##Creating-a-K8S-Cluster-with-Kind)**<br>
+    - **[Install Kind (Windows)](##Install-Kind-(Windows))**<br>
+    - **[Creating a Cluster](##Creating-a-Cluster)**<br>
+**[Installing-Istio](##What-is-Service-Mesh?)**<br>
 
 ## What is Service Mesh?
 
