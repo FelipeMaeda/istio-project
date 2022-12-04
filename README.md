@@ -22,7 +22,7 @@ This is a test K8S Cluster created with Docker "Nodes". Used to test application
 
 ### Install Kind (Windows)
 
-See the official documentation of ![installation](https://kind.sigs.k8s.io/docs/user/quick-start/#installation). 
+See the official documentation of [installation](https://kind.sigs.k8s.io/docs/user/quick-start/#installation). 
 
 ```
 curl.exe -Lo kind-windows-amd64.exe https://kind.sigs.k8s.io/dl/v0.17.0/kind-windows-amd64
