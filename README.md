@@ -1,10 +1,11 @@
-# istio-project
+# Istio
 
 Service Mesh study. Tutorial of the Course Uncomplicating Istio of the LinuxTIPS.
 
 # Summary
 
 * **[What is Service Mesh?](#what-is-service-mesh)**<br>
+* **[Preparing the Environment](#preparing-the-environment)**<br>
 * **[Creating a K8S Cluster with Kind](#creating-a-k8s-cluster-with-kind)**<br>
    * [Clone this repo](#clone-this-repo)<br>
    * [Install Kind (Windows)](#install-kind-windows)<br>
@@ -19,6 +20,10 @@ Service Mesh study. Tutorial of the Course Uncomplicating Istio of the LinuxTIPS
 When we have a MicroService architecture in our environment and this environment is so much big, we have problems with observability and collection of metrics of the each service. It's in this point that the Service Mesh comes in as a Solution, with observability and control of traffic in each requisition of the services.
 
 The Istio Service Mesh is the more famous in K8S Cluster and this tool have too much features that i will explore in this repository. In addition the Istio Service Mesh also configures Security tools and metrics of requisitions that we can track back (trace) and verify the return of each requisition.
+
+## Preparing the Environment
+
+To study Istio, it be necessary create a Cluster K8S and Install the tools necessary to execute commands and resources of the Istio.
 
 ## Creating a K8S Cluster with **Kind**
 
@@ -64,6 +69,54 @@ In your compressed file of the Istio, you have a "bin" folder that contain you *
 istioctl install --set profile=demo -y
 istioctl proxy-status
 ```
+
+## Creating namespaces and enable Istio Sidecar Injection
+
+```
+kubectl create namespace strigus
+kubectl create namespace giropops
+kubectl create namespace girus
+
+# Enable only 2 namespaces to realize tests of communication
+kubectl label namespace strigus istio-injection=enabled --overwrite
+kubectl label namespace giropops istio-injection=enabled --overwrite
+```
+
+## Creating a httpbin services
+
+```
+kubectl apply -f .\istio\samples\httpbin\httpbin.yaml -n strigus
+kubectl apply -f .\istio\samples\httpbin\httpbin.yaml -n giropops
+kubectl apply -f .\istio\samples\httpbin\httpbin.yaml -n girus
+```
+
+## Install Curl in the Pods
+
+```
+kubectl.exe exec -ti -n strigus POD_NAME -- apt-get update && apt-get install curl -y
+kubectl.exe exec -ti -n giropops POD_NAME -- apt-get update && apt-get install curl -y
+kubectl.exe exec -ti -n girus POD_NAME -- apt-get update && apt-get install curl -y
+```
+
+## Testing Service Communication
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# After Examples
 
 ## Creating your Sample with Helm
 
